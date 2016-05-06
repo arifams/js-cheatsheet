@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript cheatsheet</title>
+	<style>
+	table 
+		{
+		width:100%;
+		}
+		table, th, td 
+		{
+		border: 1px solid grey;
+		border-collapse: collapse;
+		}
+		th, td 
+		{
+		padding: 5px;
+		text-align: left;
+		}
+		/*Set color to even number table*/
+		table#t01 tr:nth-child(even) 
+		{
+		background-color: #eee;
+		}
+		/*Set color to even number table when mouse on over*/
+		table#t01 tr:hover:nth-child(even)
+		{
+		background-color: #ffff99;
+		}
+		/*Set color to odd number table*/
+		table#t01 tr:nth-child(odd) 
+		{
+		background-color:#fff;
+		}
+		/*Set color to odd number table when mouse on over*/
+		table#t01 tr:hover:nth-child(odd)
+		{
+		background-color: #ffff99;
+		}
+		/*set width 20% to left column and let css calculated the rest of right columns*/
+		table#t01 td:nth-child(1)
+		{
+		width: 20%;
+		}
+		/*set width 45% to the middle column*/
+		table#t01 td:nth-child(2)
+		{
+		width: 45%;
+		}
+		/*set width 35% to the right column*/
+		table#t01 td:nth-child(3)
+		{
+		width: 35%;
+		}
+		table#t01 th	
+		{
+		background-color: grey;
+		color: white;
+		}
+	/*Wrap is the container for the function homework script and explanation*/
+	#Wrap
+	{
+		font: sans-serif 1em;
+	}
+		.outer 
+		{
+		width: 100%;
+		border: 1px solid lightgrey;
+		white-space: nowrap;
+		overflow: hidden;
+		}
+		.left, .right {
+		display: inline-block;
+		}
+		.left {
+		width: 30%;
+		}
+		.right {
+		width: 70%;
+		padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<h1>JavaScript Cheatsheet</h1>
+<h4>by Arif</h4>
+
+<table id="t01">
+  <tr>
+    <th>JS Cheats</th>
+    <th>Description</th>	
+    <th>Sample</th>	
+  </tr>
+  <tr>
+    <td>//</td>
+    <td>Single line comment</td>	
+    <td>// This is a single line comment</td>	
+  </tr>
+  <tr>
+    <td>/* your-code-here */</td>
+    <td>Multi line comment</td>		
+    <td>/* I'm a nifty multi-line comment! */</td>	
+  </tr>
+  <tr>
+    <td>Debugging</td>
+    <td>Searching for errors in programming code is called code debugging. Command + Option + J is an action to open console in Google Chrome. Opening console in browser is really important to debugging (show alerts or comments in the console. use console.log() to display JavaScript values in the debugger window</td>	
+    <td>
+    	&lt;script&gt;
+    	<br />
+		a = 5;
+		<br />
+		b = 6;
+		<br />
+		c = a + b;
+		<br />
+		console.log(c);
+		<br />
+		&lt;/script&gt;
+    </td>	
+  </tr>
+  <tr>
+    <td>Variable</td>
+    <td>Variables are containers for storing data values. We write variable in javascript with 'var'. In the right column sample we can see x, y, and z are variables</td>
+    <td>
+    	&lt;script&gt;
+    	<br />
+    	var x = 11;
+    	<br />
+		var y = 12;
+		<br />
+		var z = x + y; 
+		<br />
+		document.getElementById("demo").innerHTML = z; 
+		<br />
+		 <em>//if we have id 'demo' as DOM in html then it will give result 23 (from 11+12). 
+		<br />
+		 //To call id 'demo' we can put &lt;p id="demo"&gt;&lt;/p&gt; in our HTML body. </em>
+		 &lt;/script&gt;
+	</td>		
+  </tr>
+    <tr>
+    <td>string</td>
+    <td>Javascript using string, inside quotiation. 
+	<br />
+    In the right column sample we could see variable x has "Hello Class" string and variable y has "Welcome to your first JS class". 
+	<br />
+    Variable z is combination between variable x and y. So it will generate string "Hello Class! Welcome to your first JS class"</td>
+    <td>var x = "Hello Class!";
+    	<br />
+		var y = " Welcome to your first JS class";
+		<br />
+		var z = x + y
+	</td>		
+  </tr>
+  <tr>
+  	<td>Data Type</td>
+  	<td>JavaScript variables can hold many data types: numbers, strings, arrays, boolean, objects and undefined</td>
+  	<td>
+  		var length = 16;                               // Number
+  		<br />
+  		var fisrtName = True;                      // Boolean
+  		<br />
+  		var lastName = "Johnson";                      // String
+  		<br />var cars = ["Saab", "Volvo", "BMW"];     // Array
+  		<br />
+  		var x = {firstName:"John", lastName:"Doe"};    // Object
+  	</td>
+  </tr>
+ <tr>
+ 	<td>Array</td>
+ 	<td>JavaScript arrays are used to store multiple values in a single variable. [0] is the first element in an array. [1] is the second. Array indexes start with 0. Never put a comma after the last element. The effect is inconsistent across browsers. In the sample column we will see a variable 'cars' with single and multi dimensional arrays</td>
+ 	<td>
+ 		//single arrays
+ 		<br />
+ 		var cars = ["Saab", "Volvo", "BMW"]; 
+ 		<br />
+ 		//Multi dimensional arrays
+ 		<br />
+ 		var numeric = [ ['input1','input2'], ['input3','input4'] ];
+ 		<br />
+		numeric[0][0] == 'input1';
+		<br />
+		numeric[0][1] == 'input2';
+		<br />
+		numeric[1][0] == 'input3';
+		<br />
+		numeric[1][1] == 'input4';
+ 	</td>
+ </tr>
+ <tr>
+ 	<td>;</td>
+ 	<td>Semi colon. Always use semi colon after javascript statement. Even browser is smart enough to recognize our script but to standarize our script is to use semi colon after the statement</td>
+ 	<td>document.getElementById("demo").innerHTML = "Hello Sun!";</td>
+ </tr>
+ <tr>
+ 	<td>Function</td>
+ 	<td>Function is a block of code that we will use/render later. It can take arguments or value as well. We use function because we can reuse code: Define the code once, and use it many times. We can use the same code many times with different arguments, to produce different results. On the sample we will use the function to change meter to feet</td>
+ 	<td>
+ 		//we can put this script inside the html body to converse meter to feet. Variable 'meter' is able to change the meter value into feet
+ 		<br />
+ 		&lt;p id="demoFoot"&gt;&lt;/p&gt;
+ 		<br />
+ 		&lt;script&gt;
+ 		<br />
+		var meter = 60; // the value on meter is 60, but we can change it as much as we like
+		<br />
+		document.getElementById("demoFoot").innerHTML =
+		<br />
+		"The length is " + toFeet(3.28084) + " Feet";
+		<br />
+		function toFeet(feet) {
+		<br />
+		return (3.28084/1) * (feet- meter);
+		<br />
+		} 
+		<br />
+		&lt;/script&gt;
+ 	</td>
+ </tr>
+ <tr>
+	<td>Logic</td>
+	<td>The control flow of your program. In JavaScript, logical operators are used for boolean logic where a boolean value may be returned depending on the outcome of an expression. Inside sample column on our right side is the sample of logic and how to test it</td>
+	<td>
+		&lt;p&gt;Assign 5 to x, and display the value of the comparison (x == 8):&lt;/p&gt;
+		<br />
+		&lt;p id="demo"&gt;&lt;/p&gt;
+		<br />
+		&lt;script&gt;
+		<br />
+		var x = 5;
+		<br />
+		document.getElementById("demo").innerHTML = (x == 8);
+		<br />
+		&lt;/script&gt;
+		<br />
+		// the result will show 'false' in our browser. but if we change x == 5 then will show 'true'
+	</td>
+ </tr>
+ <tr>
+ 	<td>Testing</td>
+ 	<td>To test javascript is quite easy. Just press keyboard cmd + alt + J and the console will pop up</td>
+ 	<td>To test if two strings are not the same, in browser console we can put command "stringone" !== "string two"; If we execute this command then browser will show the answer as TRUE because those two string are definitely not the same"stringone" !== "string two";</td>
+ </tr>
+</table>
+
+<div class="empty">
+	<p><br /></p>
+</div>
+
+<h3>Write 3 different functions that take input and return something via the console or an alert
+</h3>
+
+<div id="wrap" class="outer">
+	<div class="left">
+		<img id="myImg" src="img/dance1.gif" width="107" height="98">
+
+		<button onclick="myFunction()">Change the break dance!</button>
+
+		<script>
+			function myFunction() {
+				document.getElementById("myImg").src = "img/dance2.gif";
+			}
+		</script>
+	</div>
+	<div class="right"> 
+	// Idea: change animation. 
+	<br />
+	// On the left side column we are using onclick function to change the animation after user hit myFunction button.
+	<br />
+	// This is the script 
+	<br />
+		&lt;img id="myImg" src="img/dance1.gif" width="107" height="98"&gt;
+	<br />
+		&lt;button onclick="myFunction()"&gt;Change the break dance!&lt;/button&gt;
+	<br />
+		&lt;script&gt;
+	<br />
+			function myFunction() {
+	<br />
+				document.getElementById("myImg").src = "img/dance2.gif";
+	<br />
+			}
+	<br />
+		&lt;/script&gt;
+	<br />
+	</div>
+</div>
+
+<div id="wrap" class="outer">
+	<div class="left">
+		<p id="demo">JavaScript can change HTML content.</p>
+
+		<button type="button"
+			onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">
+		Click Me!</button>
+	</div>
+	<div class="right"> 
+	// Idea: change content. 
+	<br />
+	// On the left side column we are using onclick to change the html content after user click the button.
+	<br />
+	// This is the script 
+	<br />
+		&lt;p id="demo">JavaScript can change HTML content.&lt;/p&gt;
+	<br />
+		&lt;button type="button"
+	<br />
+			onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'"&gt;
+	<br />
+		Click Me!&lt;/button&gt;
+
+	</div>
+</div>
+
+<div id="wrap" class="outer">
+	<div class="left">
+		<script type="text/javascript">
+			var input2alert;
+			function onload() { 
+				input1 = document.getElementById('input1');
+				}
+			function alert1(){
+				alert(input1.value);
+			}
+		</script>
+
+		<div onload="onload();">
+			<input type="text" name="enter" class="enter" value="" id="input1"/>
+			<input type="button" value="show pop-up" onclick="alert1();"/>
+		</div>
+	</div>
+	<div class="right">
+		// Idea: from input text to pop-up menu.
+		<br />
+		// On the left side column we are using onload function to show text from input area into pop-up menu using alert function.
+		<br />
+		// This is the script
+		<br />
+		<br />
+		&lt;script type="text/javascript"&gt;
+		<br />
+			var input2alert;
+		<br />
+			function onload() { 
+		<br />
+				input1 = document.getElementById('input1');
+		<br />
+				}
+			function alert1(){
+		<br />
+				alert(input1.value);
+		<br />
+			}
+		<br />
+		&lt;/script&gt;
+		<br />
+		<br />
+		&lt;div onload="onload();"&gt;
+		<br />
+			&lt;input type="text" name="enter" class="enter" value="" id="input1"/&gt;
+		<br />
+			&lt;input type="button" value="show pop-up" onclick="alert1();"/&gt;
+		<br />
+		&lt;/div&gt;
+	</div>
+</div>
+
+
+</body>
+</html>
